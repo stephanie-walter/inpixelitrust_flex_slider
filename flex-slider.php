@@ -177,37 +177,37 @@ function flex_slider_settings_init() {
 
 
 	/* Add settings fields. */
-	add_settings_field( 'animation', __( 'Animation type:', 'flexi-slides' ), 'animation', 'flex-slider-settings', 'flex_slider_options_main' );
+	add_settings_field( 'flex_animation', __( 'flex_animation type:', 'flexi-slides' ), 'flex_animation', 'flex-slider-settings', 'flex_slider_options_main' );
 
-	add_settings_field( 'animationLoop', __( 'Should the animation loop? <span class="description">(If No, directionNav will received "disable" classes at either end)</span>', 'flexi-slides' ), 'animationLoop', 'flex-slider-settings', 'flex_slider_options_main' );	
+	add_settings_field( 'flex_animationLoop', __( 'Should the flex_animation loop? <span class="description">(If No, flex_directionNav will received "disable" classes at either end)</span>', 'flexi-slides' ), 'flex_animationLoop', 'flex-slider-settings', 'flex_slider_options_main' );	
 
-   add_settings_field( 'smoothHeight', __( 'Smooth height <span class="description">(animate on horizontal height)</span>:', 'flexi-slides' ), 'smoothHeight', 'flex-slider-settings', 'flex_slider_options_main' );
+   add_settings_field( 'flex_smoothHeight', __( 'Smooth height <span class="description">(animate on horizontal height)</span>:', 'flexi-slides' ), 'flex_smoothHeight', 'flex-slider-settings', 'flex_slider_options_main' );
 
-   add_settings_field( 'slideshow_auto', __( ' Automatic slideshow', 'flexi-slides' ), 'slideshow_auto', 'flex-slider-settings', 'flex_slider_options_main' );
+   add_settings_field( 'flex_slideshow_auto', __( ' Automatic slideshow', 'flexi-slides' ), 'flex_slideshow_auto', 'flex-slider-settings', 'flex_slider_options_main' );
 
-  add_settings_field( 'controlNav', __( 'Display bottom navigation pagination', 'flexi-slides' ), 'controlNav', 'flex-slider-settings', 'flex_slider_options_main' );
+   add_settings_field( 'flex_controlNav', __( 'Display bottom navigation pagination', 'flexi-slides' ), 'flex_controlNav', 'flex-slider-settings', 'flex_slider_options_main' );
 
-   add_settings_field( 'directionNav', __( 'Create navigation for previous/next navigation?', 'flexi-slides' ), 'directionNav', 'flex-slider-settings', 'flex_slider_options_main' );
+   add_settings_field( 'flex_directionNav', __( 'Create navigation for previous/next navigation?', 'flexi-slides' ), 'flex_directionNav', 'flex-slider-settings', 'flex_slider_options_main' );
 
-   add_settings_field( 'prevText', __( 'Create navigation for previous/next navigation?', 'flexi-slides' ), 'prevText', 'flex-slider-settings', 'flex_slider_options_main' );
+   add_settings_field( 'flex_prevText', __( 'Create navigation for previous/next navigation?', 'flexi-slides' ), 'flex_prevText', 'flex-slider-settings', 'flex_slider_options_main' );
 
-   add_settings_field( 'nextText', __( 'Set the text for the "next" directionNav item', 'flexi-slides' ), 'nextText', 'flex-slider-settings', 'flex_slider_options_main' );
-
+   add_settings_field( 'flex_nextText', __( 'Set the text for the "next" flex_directionNav item', 'flexi-slides' ), 'flex_nextText', 'flex-slider-settings', 'flex_slider_options_main' );
 
 	/* Add settings section. */
 	add_settings_section( 'flex_slider_options_carousel', __( ' ', 'flexi-slides' ), 'flex_slider_carousel', 'flex-slider-settings' );	
+	
 	/** Enable carousel**/
-	add_settings_field( 'enable_carousel', __( 'Enable carousel?', 'flexi-slides' ), 'enable_carousel', 'flex-slider-settings', 'flex_slider_options_carousel' );
+	add_settings_field( 'flex_enable_carousel', __( 'Enable carousel?', 'flexi-slides' ), 'flex_enable_carousel', 'flex-slider-settings', 'flex_slider_options_carousel' );
 
-	add_settings_field( 'itemWidth', __( 'Width of the images:', 'flexi-slides' ), 'itemWidth', 'flex-slider-settings', 'flex_slider_options_carousel' );
+	add_settings_field( 'flex_itemWidth', __( 'Width of the images:', 'flexi-slides' ), 'flex_itemWidth', 'flex-slider-settings', 'flex_slider_options_carousel' );
 
-	add_settings_field( 'itemMargin', __( 'Margin between items:', 'flexi-slides' ), 'itemMargin', 'flex-slider-settings', 'flex_slider_options_carousel' );
+	add_settings_field( 'flex_itemMargin', __( 'Margin between items:', 'flexi-slides' ), 'flex_itemMargin', 'flex-slider-settings', 'flex_slider_options_carousel' );
 
-	add_settings_field( 'enable_range', __( 'Add With Min & Max Range?', 'flexi-slides' ), 'enable_range', 'flex-slider-settings', 'flex_slider_options_carousel' );
+	add_settings_field( 'flex_enable_range', __( 'Add With Min & Max Range?', 'flexi-slides' ), 'flex_enable_range', 'flex-slider-settings', 'flex_slider_options_carousel' );
 
-	add_settings_field( 'minItems', __( 'Minimum number of item visible:', 'flexi-slides' ), 'minItems', 'flex-slider-settings', 'flex_slider_options_carousel' );
+	add_settings_field( 'flex_minItems', __( 'Minimum number of item visible:', 'flexi-slides' ), 'flex_minItems', 'flex-slider-settings', 'flex_slider_options_carousel' );
 
-	add_settings_field( 'maxItems', __( 'Maximum number of items visible:', 'flexi-slides' ), 'maxItems', 'flex-slider-settings', 'flex_slider_options_carousel' );
+	add_settings_field( 'flex_maxItems', __( 'Maximum number of items visible:', 'flexi-slides' ), 'flex_maxItems', 'flex-slider-settings', 'flex_slider_options_carousel' );
 	
 }
 	
@@ -220,158 +220,158 @@ function flex_slider_carousel() {
 	echo '<p class="description"> <strong>' . __( 'Note that the transition must be set to slide in order for the carousel to work', 'flexi-slides' ) . '</strong></p>';
 }
 
-function itemWidth() {	
+function flex_itemWidth() {	
 	/* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$itemWidth = $options['itemWidth'];	
+	$flex_itemWidth = $options['flex_itemWidth'];	
 	/* Echo the field. */ ?>
-	<input type="text" id="itemWidth" name="flex_slider_options[itemWidth]" value="<?php echo esc_attr($itemWidth); ?>" /> <span class="description"><?php _e( 'px', 'flexi-slides' ); ?></span>
+	<input type="text" id="flex_itemWidth" name="flex_slider_options[flex_itemWidth]" value="<?php echo esc_attr($flex_itemWidth); ?>" /> <span class="description"><?php _e( 'px', 'flexi-slides' ); ?></span>
 	
 <?php }
 
-function itemMargin() {	
+function flex_itemMargin() {	
 	/* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$itemMargin = $options['itemMargin'];	
+	$flex_itemMargin = $options['flex_itemMargin'];	
 	/* Echo the field. */ ?>
-	<input type="text" id="itemMargin" name="flex_slider_options[itemMargin]" value="<?php echo esc_attr($itemMargin); ?>" /> <span class="description"><?php _e( 'px', 'flexi-slides' ); ?></span>	
+	<input type="text" id="flex_itemMargin" name="flex_slider_options[flex_itemMargin]" value="<?php echo esc_attr($flex_itemMargin); ?>" /> <span class="description"><?php _e( 'px', 'flexi-slides' ); ?></span>	
 <?php }
 
 
-function minItems() {	
+function flex_minItems() {	
 	/* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$minItems = $options['minItems'];	
+	$flex_minItems = $options['flex_minItems'];	
 	/* Echo the field. */ ?>
-	<input type="text" id="minItems" name="flex_slider_options[minItems]" value="<?php echo esc_attr($minItems); ?>" /> 
+	<input type="text" id="flex_minItems" name="flex_slider_options[flex_minItems]" value="<?php echo esc_attr($flex_minItems); ?>" /> 
 <?php }
 
-function maxItems() {	
+function flex_maxItems() {	
 	/* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$maxItems = $options['maxItems'];	
+	$flex_maxItems = $options['flex_maxItems'];	
 	/* Echo the field. */ ?>
-	<input type="text" id="maxItems" name="flex_slider_options[maxItems]" value="<?php echo esc_attr($maxItems); ?>" /> 
-<?php }
-
-
-function prevText() {	
-	/* Get the option value from the database. */
-	$options = get_option( 'flex_slider_options' );
-	$prevText = $options['prevText'];	
-	/* Echo the field. */ ?>
-	<input type="text" id="prevText" name="flex_slider_options[prevText]" value="<?php echo esc_attr($prevText); ?>" /> 
+	<input type="text" id="flex_maxItems" name="flex_slider_options[flex_maxItems]" value="<?php echo esc_attr($flex_maxItems); ?>" /> 
 <?php }
 
 
-function nextText() {	
+function flex_prevText() {	
 	/* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$nextText = $options['nextText'];	
+	$flex_prevText = $options['flex_prevText'];	
 	/* Echo the field. */ ?>
-	<input type="text" id="nextText" name="flex_slider_options[nextText]" value="<?php echo esc_attr($nextText); ?>" /> 
+	<input type="text" id="flex_prevText" name="flex_slider_options[flex_prevText]" value="<?php echo esc_attr($flex_prevText); ?>" /> 
 <?php }
 
-function animation() {	
+
+function flex_nextText() {	
 	/* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$animation = $options['animation'];
+	$flex_nextText = $options['flex_nextText'];	
+	/* Echo the field. */ ?>
+	<input type="text" id="flex_nextText" name="flex_slider_options[flex_nextText]" value="<?php echo esc_attr($flex_nextText); ?>" /> 
+<?php }
+
+function flex_animation() {	
+	/* Get the option value from the database. */
+	$options = get_option( 'flex_slider_options' );
+	$flex_animation = $options['flex_animation'];
 	
 	/* Echo the field. */
-	echo "<select id='animation' name='flex_slider_options[animation]'>";
-	echo '<option value="fade" ' . selected( $animation, 'fade', false ) . ' >' . __( 'fade', 'flexi-slides' ) . '</option>';
-	echo '<option value="slide" ' . selected( $animation, 'slide', false ) . ' >' . __( 'slide', 'flexi-slides' ) . '</option>';
+	echo "<select id='flex_animation' name='flex_slider_options[flex_animation]'>";
+	echo '<option value="fade" ' . selected( $flex_animation, 'fade', false ) . ' >' . __( 'fade', 'flexi-slides' ) . '</option>';
+	echo '<option value="slide" ' . selected( $flex_animation, 'slide', false ) . ' >' . __( 'slide', 'flexi-slides' ) . '</option>';
 	echo '</select>';	
 }
 
-function animationLoop() {
+function flex_animationLoop() {
 	 /* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$animationLoop = $options['animationLoop'];	
+	$flex_animationLoop = $options['flex_animationLoop'];	
 	/* Echo the field. */
    
 	/* Echo the field. */ ?>
-	<label for="animationLoop_true" > <?php _e( ' True', 'flexi-slides' ); ?></label>
-	<input type="radio" <?php if ($animationLoop == "true") echo'checked="checked"' ; ?> id="animationLoop_true" name="flex_slider_options[animationLoop]" value="true" /> 
-	<label for="animationLoop_false" > <?php _e( ' False', 'flexi-slides' ); ?></label>
-	<input type="radio" id="animationLoop_false" <?php if ($animationLoop == "false") echo'checked="checked"' ; ?> name="flex_slider_options[animationLoop]" value="false" /> 
+	<label for="flex_animationLoop_true" > <?php _e( ' True', 'flexi-slides' ); ?></label>
+	<input type="radio" <?php if ($flex_animationLoop == "true") echo'checked="checked"' ; ?> id="flex_animationLoop_true" name="flex_slider_options[flex_animationLoop]" value="true" /> 
+	<label for="flex_animationLoop_false" > <?php _e( ' False', 'flexi-slides' ); ?></label>
+	<input type="radio" id="flex_animationLoop_false" <?php if ($flex_animationLoop == "false") echo'checked="checked"' ; ?> name="flex_slider_options[flex_animationLoop]" value="false" /> 
 	<?php
 }
-function enable_carousel() {
+function flex_enable_carousel() {
 	 /* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$enable_carousel = $options['enable_carousel'];	
+	$flex_enable_carousel = $options['flex_enable_carousel'];	
  
 	/* Echo the field. */ ?>
-	<label for="enable_carousel_true" > <?php _e( ' Yes', 'flexi-slides' ); ?></label>
-	<input type="radio" <?php if ($enable_carousel == "yes") echo'checked="checked"' ; ?> id="enable_carousel_true" name="flex_slider_options[enable_carousel]" value="yes" /> 
-	<label for="enable_carousel_false" > <?php _e( ' No', 'flexi-slides' ); ?></label>
-	<input type="radio" id="enable_carousel_false" <?php if ($enable_carousel == "no") echo'checked="checked"' ; ?> name="flex_slider_options[enable_carousel]" value="no" /> 
+	<label for="flex_enable_carousel_true" > <?php _e( ' Yes', 'flexi-slides' ); ?></label>
+	<input type="radio" <?php if ($flex_enable_carousel == "yes") echo'checked="checked"' ; ?> id="flex_enable_carousel_true" name="flex_slider_options[flex_enable_carousel]" value="yes" /> 
+	<label for="flex_enable_carousel_false" > <?php _e( ' No', 'flexi-slides' ); ?></label>
+	<input type="radio" id="flex_enable_carousel_false" <?php if ($flex_enable_carousel == "no") echo'checked="checked"' ; ?> name="flex_slider_options[flex_enable_carousel]" value="no" /> 
 	<?php
 }
 
-function enable_range() {
+function flex_enable_range() {
 	 /* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$enable_range = $options['enable_range'];	
+	$flex_enable_range = $options['flex_enable_range'];	
 
 	/* Echo the field. */ ?>
-	<label for="enable_range_true" > <?php _e( ' Yes', 'flexi-slides' ); ?></label>
-	<input type="radio" <?php if ($enable_range == "yes") echo'checked="checked"' ; ?> id="enable_range_true" name="flex_slider_options[enable_range]" value="yes" /> 
-	<label for="enable_range_false" > <?php _e( ' No', 'flexi-slides' ); ?></label>
-	<input type="radio" id="enable_range_false" <?php if ($enable_range == "no") echo'checked="checked"' ; ?> name="flex_slider_options[enable_range]" value="no" /> 
+	<label for="flex_enable_range_true" > <?php _e( ' Yes', 'flexi-slides' ); ?></label>
+	<input type="radio" <?php if ($flex_enable_range == "yes") echo'checked="checked"' ; ?> id="flex_enable_range_true" name="flex_slider_options[flex_enable_range]" value="yes" /> 
+	<label for="flex_enable_range_false" > <?php _e( ' No', 'flexi-slides' ); ?></label>
+	<input type="radio" id="flex_enable_range_false" <?php if ($flex_enable_range == "no") echo'checked="checked"' ; ?> name="flex_slider_options[flex_enable_range]" value="no" /> 
 	<?php
 }
 
-function smoothHeight() {
+function flex_smoothHeight() {
 	 /* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$smoothHeight = $options['smoothHeight'];	
+	$flex_smoothHeight = $options['flex_smoothHeight'];	
 
 	/* Echo the field. */ ?>
-	<label for="smoothHeight_true" > <?php _e( ' True', 'flexi-slides' ); ?></label>
-	<input type="radio" <?php if ($smoothHeight == "true") echo'checked="checked"' ; ?> id="smoothHeight_true" name="flex_slider_options[smoothHeight]" value="true" /> 
-	<label for="smoothHeight_false" > <?php _e( ' False', 'flexi-slides' ); ?></label>
-	<input type="radio" id="smoothHeight_false" <?php if ($smoothHeight == "false") echo'checked="checked"' ; ?> name="flex_slider_options[smoothHeight]" value="false" /> 
+	<label for="flex_smoothHeight_true" > <?php _e( ' True', 'flexi-slides' ); ?></label>
+	<input type="radio" <?php if ($flex_smoothHeight == "true") echo'checked="checked"' ; ?> id="flex_smoothHeight_true" name="flex_slider_options[flex_smoothHeight]" value="true" /> 
+	<label for="flex_smoothHeight_false" > <?php _e( ' False', 'flexi-slides' ); ?></label>
+	<input type="radio" id="flex_smoothHeight_false" <?php if ($flex_smoothHeight == "false") echo'checked="checked"' ; ?> name="flex_slider_options[flex_smoothHeight]" value="false" /> 
 	<?php
 }
 
-function slideshow_auto() {
+function flex_slideshow_auto() {
 	 /* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$slideshow_auto = $options['slideshow_auto'];	
+	$flex_slideshow_auto = $options['flex_slideshow_auto'];	
 
 	/* Echo the field. */ ?>
-	<label for="slideshow_auto_true" > <?php _e( ' True', 'flexi-slides' ); ?></label>
-	<input type="radio" <?php if ($slideshow_auto == "true") echo'checked="checked"' ; ?> id="slideshow_auto_true" name="flex_slider_options[slideshow_auto]" value="true" /> 
-	<label for="slideshow_auto_false" > <?php _e( ' False', 'flexi-slides' ); ?></label>
-	<input type="radio" id="slideshow_auto_false" <?php if ($slideshow_auto == "false") echo'checked="checked"' ; ?> name="flex_slider_options[slideshow_auto]" value="false" /> 
+	<label for="flex_slideshow_auto_true" > <?php _e( ' True', 'flexi-slides' ); ?></label>
+	<input type="radio" <?php if ($flex_slideshow_auto == "true") echo'checked="checked"' ; ?> id="flex_slideshow_auto_true" name="flex_slider_options[flex_slideshow_auto]" value="true" /> 
+	<label for="flex_slideshow_auto_false" > <?php _e( ' False', 'flexi-slides' ); ?></label>
+	<input type="radio" id="flex_slideshow_auto_false" <?php if ($flex_slideshow_auto == "false") echo'checked="checked"' ; ?> name="flex_slider_options[flex_slideshow_auto]" value="false" /> 
 	<?php
 }
 
-function controlNav() {
+function flex_controlNav() {
 	 /* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$controlNav = $options['controlNav'];	
+	$flex_controlNav = $options['flex_controlNav'];	
 
 	/* Echo the field. */ ?>
-	<label for="controlNav_true" > <?php _e( 'Yes', 'flexi-slides' ); ?></label>
-	<input type="radio" <?php if ($controlNav == "true") echo'checked="checked"' ; ?> id="controlNav_true" name="flex_slider_options[controlNav]" value="true" /> 
-	<label for="autoanimation_false" > <?php _e( 'No', 'flexi-slides' ); ?></label>
-	<input type="radio" id="controlNav_false" <?php if ($controlNav == "false") echo'checked="checked"' ; ?> name="flex_slider_options[controlNav]" value="false" /> 
+	<label for="flex_controlNav_true" > <?php _e( 'Yes', 'flexi-slides' ); ?></label>
+	<input type="radio" <?php if ($flex_controlNav == "true") echo'checked="checked"' ; ?> id="flex_controlNav_true" name="flex_slider_options[flex_controlNav]" value="true" /> 
+	<label for="autoflex_animation_false" > <?php _e( 'No', 'flexi-slides' ); ?></label>
+	<input type="radio" id="flex_controlNav_false" <?php if ($flex_controlNav == "false") echo'checked="checked"' ; ?> name="flex_slider_options[flex_controlNav]" value="false" /> 
 	<?php
 }
 
-function directionNav() {
+function flex_directionNav() {
 	 /* Get the option value from the database. */
 	$options = get_option( 'flex_slider_options' );
-	$directionNav = $options['directionNav'];	
+	$flex_directionNav = $options['flex_directionNav'];	
 
 	/* Echo the field. */ ?>
-	<label for="directionNav_true" > <?php _e( 'Yes', 'flexi-slides' ); ?></label>
-	<input type="radio" <?php if ($directionNav == "true") echo'checked="checked"' ; ?> id="directionNav_true" name="flex_slider_options[directionNav]" value="true" /> 
-	<label for="autoanimation_false" > <?php _e( 'No', 'flexi-slides' ); ?></label>
-	<input type="radio" id="directionNav_false" <?php if ($directionNav == "false") echo'checked="checked"' ; ?> name="flex_slider_options[directionNav]" value="false" /> 
+	<label for="flex_directionNav_true" > <?php _e( 'Yes', 'flexi-slides' ); ?></label>
+	<input type="radio" <?php if ($flex_directionNav == "true") echo'checked="checked"' ; ?> id="flex_directionNav_true" name="flex_slider_options[flex_directionNav]" value="true" /> 
+	<label for="autoflex_animation_false" > <?php _e( 'No', 'flexi-slides' ); ?></label>
+	<input type="radio" id="flex_directionNav_false" <?php if ($flex_directionNav == "false") echo'checked="checked"' ; ?> name="flex_slider_options[flex_directionNav]" value="false" /> 
 	<?php
 }
 
@@ -382,20 +382,20 @@ function directionNav() {
 function flex_slider_validate_options( $input ) {	
 
 	$options = get_option( 'flex_slider_options' );	
-	$options['animationLoop'] = wp_filter_nohtml_kses( $input['animationLoop'] );
-	$options['animation'] = wp_filter_nohtml_kses( $input['animation'] );
-	$options['itemWidth'] = wp_filter_nohtml_kses( intval( $input['itemWidth'] ) );	
-	$options['itemMargin'] = wp_filter_nohtml_kses( intval( $input['itemMargin'] ) );
-	$options['minItems'] = wp_filter_nohtml_kses( intval( $input['minItems'] ) );
-	$options['maxItems'] = wp_filter_nohtml_kses( intval( $input['maxItems'] ) );
-	$options['enable_carousel'] = wp_filter_nohtml_kses( $input['enable_carousel'] );
-	$options['enable_range'] = wp_filter_nohtml_kses( $input['enable_range'] );	
-	$options['smoothHeight'] = wp_filter_nohtml_kses( $input['smoothHeight'] );	
-	$options['slideshow_auto'] = wp_filter_nohtml_kses( $input['slideshow_auto'] );	
-	$options['controlNav'] = wp_filter_nohtml_kses( $input['controlNav'] );	
-	$options['directionNav'] = wp_filter_nohtml_kses( $input['directionNav'] );	
-	$options['prevText'] = wp_filter_nohtml_kses( $input['prevText'] );	
-	$options['nextText'] = wp_filter_nohtml_kses( $input['nextText'] );	
+	$options['flex_animationLoop'] = wp_filter_nohtml_kses( $input['flex_animationLoop'] );
+	$options['flex_animation'] = wp_filter_nohtml_kses( $input['flex_animation'] );
+	$options['flex_itemWidth'] = wp_filter_nohtml_kses( intval( $input['flex_itemWidth'] ) );	
+	$options['flex_itemMargin'] = wp_filter_nohtml_kses( intval( $input['flex_itemMargin'] ) );
+	$options['flex_minItems'] = wp_filter_nohtml_kses( intval( $input['flex_minItems'] ) );
+	$options['flex_maxItems'] = wp_filter_nohtml_kses( intval( $input['flex_maxItems'] ) );
+	$options['flex_enable_carousel'] = wp_filter_nohtml_kses( $input['flex_enable_carousel'] );
+	$options['flex_enable_range'] = wp_filter_nohtml_kses( $input['flex_enable_range'] );	
+	$options['flex_smoothHeight'] = wp_filter_nohtml_kses( $input['flex_smoothHeight'] );	
+	$options['flex_slideshow_auto'] = wp_filter_nohtml_kses( $input['flex_slideshow_auto'] );	
+	$options['flex_controlNav'] = wp_filter_nohtml_kses( $input['flex_controlNav'] );	
+	$options['flex_directionNav'] = wp_filter_nohtml_kses( $input['flex_directionNav'] );	
+	$options['flex_prevText'] = wp_filter_nohtml_kses( $input['flex_prevText'] );	
+	$options['flex_nextText'] = wp_filter_nohtml_kses( $input['flex_nextText'] );	
 
 	return $options;
 }
@@ -411,16 +411,16 @@ function flex_slider_default_settings() {
 	if ( !is_array( $ex_options ) ) {
 
 		$default_options = array(	
-			'animation'     => "fade",
-			'animationLoop'    => "true",
-			'slideshow_auto' => "true",
-			'smoothHeight'    => "false",
-			'controlNav'     => "true",
-			'directionNav'  => "true",
-			'prevText'     => "Previous",
-			'nextText'		=> "Next",
-			'enable_carousel' => "no",
-			'enable_range' => "no"
+			'flex_animation'     => "fade",
+			'flex_animationLoop'    => "true",
+			'flex_slideshow_auto' => "true",
+			'flex_smoothHeight'    => "false",
+			'flex_controlNav'     => "true",
+			'flex_directionNav'  => "true",
+			'flex_prevText'     => "Previous",
+			'flex_nextText'		=> "Next",
+			'flex_enable_carousel' => "no",
+			'flex_enable_range' => "no"
 		);	
 		
 		/* Set the default options. */
@@ -443,10 +443,10 @@ function flex_slider_shortcode() {
 /***** Here comes the HTML rendering, owiiii ***/
 function flex_slider_slider() {
 	$options = get_option( 'flex_slider_options' );	
-	$enable_carousel = $options['enable_carousel'];
+	$flex_enable_carousel = $options['flex_enable_carousel'];
 
 	?>
-	<div class="flexslider <?php if($enable_carousel == 'yes') echo 'carousel' ; ?>">
+	<div class="flexslider <?php if($flex_enable_carousel == 'yes') echo 'carousel' ; ?>">
         <ul class="slides">        	
     <?php	
 	$args = array( 'post_type' => 'flexi-slides', 'posts_per_page' => 10 );
@@ -484,54 +484,53 @@ function flex_slider_enqueue_scripts() {
 	wp_enqueue_script( 'flexi-slider', plugins_url('/jquery.flexslider.js', __FILE__), array( 'jquery' ), 0.1, true );
 }
 
-add_action( 'wp_print_footer_scripts', 'sf_print_footer_scripts' );
+add_action( 'wp_print_footer_scripts', 'flex_print_footer_scripts' );
 
 
-
-function sf_print_footer_scripts() {
+function flex_print_footer_scripts() {
 	$options = get_option( 'flex_slider_options' );
 	
-	$animation = $options['animation'];
-	$animationLoop = $options['animationLoop'];
-	$smoothHeight = $options['smoothHeight'];	
-	$slideshow_auto = $options['slideshow_auto'];	
-	$controlNav = $options['controlNav'];	
-	$directionNav = $options['directionNav'];
-	$prevText = $options['prevText'];	
-	$nextText = $options['nextText'];	
-	$enable_carousel = $options['enable_carousel'];
-	$itemWidth = $options['itemWidth'];
-	$itemMargin = $options['itemMargin'];
-	$enable_range = $options['enable_range'];
-	$minItems = $options['minItems'];
-	$maxItems = $options['maxItems'];		
+	$flex_animation       = $options['flex_animation'];
+	$flex_animationLoop   = $options['flex_animationLoop'];
+	$flex_smoothHeight    = $options['flex_smoothHeight'];	
+	$flex_slideshow_auto  = $options['flex_slideshow_auto'];	
+	$flex_controlNav      = $options['flex_controlNav'];	
+	$flex_directionNav    = $options['flex_directionNav'];
+	$flex_prevText        = $options['flex_prevText'];	
+	$flex_nextText        = $options['flex_nextText'];	
+	$flex_enable_carousel = $options['flex_enable_carousel'];
+	$flex_itemWidth       = $options['flex_itemWidth'];
+	$flex_itemMargin      = $options['flex_itemMargin'];
+	$flex_enable_range    = $options['flex_enable_range'];
+	$flex_minItems        = $options['flex_minItems'];
+	$flex_maxItems        = $options['flex_maxItems'];		
 
 	?>
 	<script type="text/javascript">
 	jQuery(document).ready(function($) {
       $('.flexslider').flexslider({
-      	animation: "<?php echo $animation ; ?>"
-	    ,animationLoop: <?php echo $animationLoop ; ?>
-	    ,smoothHeight:<?php echo $smoothHeight ; ?>
-	    ,slideshow:<?php echo $slideshow_auto ; ?>
-	    ,controlNav:<?php echo $controlNav ; ?> 
-	    ,directionNav:<?php echo $directionNav ; ?>	 
-	    <?php if ($directionNav == "true"){ ?>
+      	flex_animation: "<?php echo $flex_animation ; ?>"
+	    ,flex_animationLoop: <?php echo $flex_animationLoop ; ?>
+	    ,flex_smoothHeight:<?php echo $flex_smoothHeight ; ?>
+	    ,slideshow:<?php echo $flex_slideshow_auto ; ?>
+	    ,flex_controlNav:<?php echo $flex_controlNav ; ?> 
+	    ,flex_directionNav:<?php echo $flex_directionNav ; ?>	 
+	    <?php if ($flex_directionNav == "true"){ ?>
 	    
-	    ,prevText: "<?php echo esc_js($prevText) ; ?>"
+	    ,flex_prevText: "<?php echo esc_js($flex_prevText) ; ?>"
 	    
-	    ,prevText: "<?php echo esc_js($nextText) ; ?>"
+	    ,flex_prevText: "<?php echo esc_js($flex_nextText) ; ?>"
 	    <?php } ?>
-	    <?php if ($enable_carousel == "yes"){ ?>
-	    ,itemWidth: <?php echo esc_js($itemWidth) ; ?>
+	    <?php if ($flex_enable_carousel == "yes"){ ?>
+	    ,flex_itemWidth: <?php echo esc_js($flex_itemWidth) ; ?>
 	    
-	    ,itemMargin: <?php echo esc_js($itemMargin) ; ?>
+	    ,flex_itemMargin: <?php echo esc_js($flex_itemMargin) ; ?>
 	    <?php } ?>
-	    <?php if ($enable_range == "yes"){ ?>
+	    <?php if ($flex_enable_range == "yes"){ ?>
 	    
-	    ,minItems: <?php echo esc_js($minItems) ; ?>
+	    ,flex_minItems: <?php echo esc_js($flex_minItems) ; ?>
 	    
-	    ,maxItems: <?php echo esc_js($maxItems) ; ?>
+	    ,flex_maxItems: <?php echo esc_js($flex_maxItems) ; ?>
 	    <?php } ?>
 	    
      });
@@ -542,9 +541,9 @@ function sf_print_footer_scripts() {
  }
 
 /** stylesheet **/
-add_action( 'wp_enqueue_scripts', 'prefix_add_my_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'flex_add_my_stylesheet' );
 
-    function prefix_add_my_stylesheet() {
+    function flex_add_my_stylesheet() {
         wp_register_style( 'prefix-style', plugins_url('flexslider.css', __FILE__) );
         wp_enqueue_style( 'prefix-style' );
 }
